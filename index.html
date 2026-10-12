@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10243a">
+<title>LinkedIn Positioning Review | Nicole Stockdale-Mitzner</title>
+<style>
+:root{--ink:#152638;--muted:#5f6f7e;--paper:#f5f7f8;--white:#fff;--navy:#10243a;--blue:#2d6b91;--gold:#d9ad5b;--line:#dce3e8;--soft:#eaf0f4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+button{font:inherit}
+.nav{position:sticky;top:0;z-index:10;background:rgba(16,36,58,.96);color:#fff;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff20}
+.navin{max-width:1120px;margin:auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c7d5e0;white-space:nowrap}
+.links{display:flex;gap:18px;overflow:auto}
+.links a{text-decoration:none;font-size:13px;color:#e0e8ee;white-space:nowrap}
+.links a:hover,.links a.active{color:#f2c976}
+.hero{background:radial-gradient(ellipse at 85% 0%,#285575 0,transparent 40%),var(--navy);color:#fff;padding:82px 24px 76px}
+.wrap{max-width:1040px;margin:auto}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,6vw,68px);font-weight:500;line-height:1.04;letter-spacing:-.035em;max-width:780px;margin:18px 0}
+.hero h1 em{font-weight:400;color:#e8c77f}
+.hero p{max-width:650px;color:#d5e0e8;font-size:18px;margin:0}
+.herofoot{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.pill{border:1px solid #ffffff30;border-radius:99px;padding:7px 13px;font-size:12px;color:#e2ebf1}
+.section{padding:68px 24px}
+.section.white{background:#fff}
+.sectionhead{display:grid;grid-template-columns:100px 1fr;gap:22px;align-items:start;margin-bottom:30px}
+.num{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.12em;padding-top:10px}
+.section h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,43px);font-weight:500;line-height:1.13;letter-spacing:-.025em;margin:0 0 10px}
+.lead{color:var(--muted);max-width:720px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
+.white .card{background:#f9fbfc}
+.card h3{font-size:16px;line-height:1.35;margin:8px 0}
+.card p{font-size:14px;color:var(--muted);margin:8px 0 0}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);font-weight:800}
+.callout{border-left:3px solid var(--gold);padding:16px 20px;background:#fbf6ea;border-radius:0 10px 10px 0;margin-top:18px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.compare>div{padding:24px;border-radius:14px;border:1px solid var(--line);background:#fff;min-width:0}
+.compare .after{background:var(--navy);color:#fff;border-color:var(--navy)}
+.compare p{margin:10px 0 0}
+.compare .after p{color:#d7e3eb}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--blue)}
+.after .tag{color:var(--gold)}
+.headline{display:flex;flex-direction:column;gap:14px}
+.headline .card{display:grid;grid-template-columns:40px 1fr auto;gap:16px;align-items:start}
+.option{font-size:13px;color:var(--blue);font-weight:800;padding-top:3px}
+.headline h3{font-size:16px;font-weight:650;margin:0;overflow-wrap:anywhere}
+.headline .rationale{font-size:13px;color:var(--muted);margin-top:8px}
+.copy{border:1px solid #cbd7df;background:#fff;color:var(--ink);border-radius:8px;padding:8px 11px;font-size:12px;font-weight:750;cursor:pointer;white-space:nowrap}
+.copy:hover{background:var(--soft)}
+.copy:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.currentcopy{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7f9;border:1px solid var(--line);border-radius:12px;padding:20px;color:#33485a;font-size:14px}
+.aboutcopy{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;font-size:15px;line-height:1.8}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px}
+.bar h3{margin:0;font-size:18px}
+.featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.featuretitle{font-weight:750;margin:8px 0}
+.bannerbox{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.bannerbox img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.small{font-size:13px;color:var(--muted)}
+.shift{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.shift span{padding:10px 14px;border-radius:8px;background:#eaf0f4;font-size:13px;font-weight:700}
+.shift b{color:var(--blue)}
+.footer{padding:30px 24px;background:#0b1a29;color:#aebdca;text-align:center;font-size:12px}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,12px);background:#14283b;color:#fff;padding:10px 16px;border-radius:9px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:30}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){
+.navin{align-items:flex-start;flex-direction:column;padding:12px 18px}
+.links{max-width:100%;width:100%;gap:16px}
+.hero{padding:58px 20px}
+.section{padding:50px 20px}
+.sectionhead{grid-template-columns:1fr;gap:5px}
+.grid,.featured{grid-template-columns:1fr}
+.compare,.bannerbox{grid-template-columns:1fr}
+.headline .card{grid-template-columns:26px 1fr;gap:10px}
+.headline .copy{grid-column:2;justify-self:start}
+.hero p{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.reveal{opacity:1;transform:none;transition:none}
+*{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+<div class="navin">
+<div class="brand">LinkedIn positioning review</div>
+<nav class="links" aria-label="Review sections">
+<a href="#overview">Overview</a>
+<a href="#positioning">Positioning</a>
+<a href="#headline">Headline</a>
+<a href="#about">About</a>
+<a href="#featured">Featured</a>
+<a href="#banner">Banner</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="overview">
+<div class="wrap">
+<div class="eyebrow">Prepared for Nicole Stockdale-Mitzner</div>
+<h1>Make your experience easier to <em>understand at a glance.</em></h1>
+<p>A focused positioning review for a career spanning operations, people leadership, project coordination, and vendor management.</p>
+<div class="herofoot">
+<span class="pill">Clearer professional story</span>
+<span class="pill">5 headline directions</span>
+<span class="pill">Paste-ready About section</span>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">01 / INSIGHT</div>
+<div>
+<h2>What stands out</h2>
+<p class="lead">Your experience gives you a broader story than a current job title alone can communicate.</p>
+</div>
+</div>
+<div class="grid">
+<article class="card reveal">
+<div class="kicker">Career range</div>
+<h3>Operations and people leadership</h3>
+<p>Your Walmart progression, alongside earlier HR, staffing, banking, and buying roles, points to experience across people and operational environments.</p>
+</article>
+<article class="card reveal">
+<div class="kicker">Current signal</div>
+<h3>Vendor management is the entry point</h3>
+<p>Your current role should stay prominent, while your headline can add the broader strengths that distinguish your professional story.</p>
+</article>
+<article class="card reveal">
+<div class="kicker">Opportunity</div>
+<h3>Translate responsibilities into strengths</h3>
+<p>Project coordination, cross-functional teamwork, employee development, and operational execution are more memorable when stated plainly.</p>
+</article>
+</div>
+<div class="callout">Positioning principle: keep the current role credible, then make the transferable strengths visible. Avoid claims about business results that are not documented.</div>
+</div>
+</section>
+
+<section class="section white" id="positioning">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">02 / POSITION</div>
+<div>
+<h2>Current signal, clearer story</h2>
+<p class="lead">The supplied profile presents you as a Walmart Vendor Manager and describes strengths in project management, people management, cross-functional coordination, budgets, and timely delivery.</p>
+</div>
+</div>
+<div class="compare">
+<div>
+<div class="tag">Current emphasis</div>
+<h3>Role and broad capabilities</h3>
+<p class="small">The profile establishes experience and leadership, but the headline shown in the supplied snapshot is primarily a title: “Vendor Manager, at Walmart.”</p>
+</div>
+<div class="after">
+<div class="tag">Suggested emphasis</div>
+<h3>Role + strengths + operating style</h3>
+<p>Help a profile visitor quickly connect vendor management with practical strengths in operations, people leadership, and coordinated execution.</p>
+</div>
+</div>
+<div class="bar"><h3>What could be clearer?</h3></div>
+<div class="grid">
+<div class="card">
+<h3>Professional through-line</h3>
+<p>Connect the career history into one coherent story instead of asking visitors to infer the common thread.</p>
+</div>
+<div class="card">
+<h3>Distinctive strengths</h3>
+<p>Bring project planning, employee training, employee relations, and team leadership closer to the top.</p>
+</div>
+<div class="card">
+<h3>Proof and examples</h3>
+<p>Where permitted, add specific projects or examples that demonstrate how you coordinate people and work. No results should be added unless verified.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="headline">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">03 / HEADLINE</div>
+<div>
+<h2>Five headline options</h2>
+<p class="lead">Choose the level of breadth that feels most authentic to your role and next career step. Each option is ready to copy.</p>
+</div>
+</div>
+<div class="currentcopy"><strong>Headline shown in supplied profile snapshot</strong><br>Vendor Manager, at Walmart</div>
+<div class="headline" style="margin-top:16px">
+<article class="card reveal">
+<div class="option">01</div>
+<div><h3>Vendor Manager at Walmart | Operations, Team Leadership & Cross-Functional Collaboration</h3><div class="rationale">Best balanced option. Keeps your current role first and makes key strengths searchable.</div></div>
+<button class="copy" data-copy="Vendor Manager at Walmart | Operations, Team Leadership & Cross-Functional Collaboration">Copy</button>
+</article>
+<article class="card reveal">
+<div class="option">02</div>
+<div><h3>Vendor Manager | Project Coordination, People Leadership & Operational Execution</h3><div class="rationale">Best if you want a role-led headline with a broader professional skill set.</div></div>
+<button class="copy" data-copy="Vendor Manager | Project Coordination, People Leadership & Operational Execution">Copy</button>
+</article>
+<article class="card reveal">
+<div class="option">03</div>
+<div><h3>Walmart Vendor Manager | Bringing Teams, Priorities & Projects Together</h3><div class="rationale">A more human, memorable expression of coordination and leadership.</div></div>
+<button class="copy" data-copy="Walmart Vendor Manager | Bringing Teams, Priorities & Projects Together">Copy</button>
+</article>
+<article class="card reveal">
+<div class="option">04</div>
+<div><h3>People-Focused Operations Leader | Vendor Management, Employee Development & Project Planning</h3><div class="rationale">Best for a broader leadership identity, if it matches the scope you want to signal.</div></div>
+<button class="copy" data-copy="People-Focused Operations Leader | Vendor Management, Employee Development & Project Planning">Copy</button>
+</article>
+<article class="card reveal">
+<div class="option">05</div>
+<div><h3>Vendor Management & Operations | Team Development, Process Coordination and Project Planning</h3><div class="rationale">Best for highlighting transferable capabilities across operational roles.</div></div>
+<button class="copy" data-copy="Vendor Management & Operations | Team Development, Process Coordination and Project Planning">Copy</button>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section white" id="about">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">04 / ABOUT</div>
+<div>
+<h2>A more specific About section</h2>
+<p class="lead">Your current summary has a solid foundation: planning, people management, teamwork, budgets, and delivery. The opportunity is to make the professional through-line more concrete and less generic.</p>
+</div>
+</div>
+<div class="bar"><h3>Current About, from supplied profile</h3></div>
+<div class="currentcopy">As a skilled project manager and people manager, I bring a unique blend of strategic planning and team leadership to drive projects to successful completion. I excel in coordinating cross-functional teams, managing budgets, and ensuring timely delivery while fostering a collaborative and productive team environment. My ability to balance the needs of the business with the strengths of the team ensures that we not only meet our goals but exceed expectations. Let's connect to see how I can help your organization achieve its next big milestone.</div>
+<div class="bar"><h3>Suggested replacement</h3><button class="copy" data-copy-target="newAbout">Copy About</button></div>
+<div class="aboutcopy" id="newAbout">I’m a people-focused operations and project professional with experience across vendor management, team leadership, employee relations, and day-to-day business operations.
+
+Throughout my career, I’ve worked in different environments where clear communication, thoughtful planning, and dependable execution matter. My experience includes operations leadership at Walmart, vendor management, project coordination, staffing, human resources, and earlier administrative and financial services roles.
+
+I’m especially interested in the work that helps teams move forward: aligning priorities, coordinating across functions, supporting employee development, and creating a collaborative environment where people can do their best work.
+
+I value practical problem-solving, continuous learning, and balancing business needs with the strengths of the people doing the work. My project management learning has also strengthened my interest in structured planning, project initiation, and bringing work from idea to execution.
+
+I’m always glad to connect with professionals who care about strong teams, thoughtful operations, and getting meaningful work done.</div>
+<p class="small">Before publishing, adjust any wording that does not reflect your own voice or the scope of your current responsibilities.</p>
+</div>
+</section>
+
+<section class="section" id="featured">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">05 / FEATURED</div>
+<div>
+<h2>Make experience easier to verify</h2>
+<p class="lead">The supplied profile snapshot does not show Featured items, so these are recommendations rather than claims about what is currently displayed.</p>
+</div>
+</div>
+<div class="featured">
+<article class="card"><div class="kicker">Direction 01</div><div class="featuretitle">Project planning credentials</div><p>Feature your Google project management certificates with a short note on the planning skills you are developing.</p></article>
+<article class="card"><div class="kicker">Direction 02</div><div class="featuretitle">A leadership example</div><p>Share a public-safe example of coordinating a team or improving a process. Keep internal Walmart information confidential.</p></article>
+<article class="card"><div class="kicker">Direction 03</div><div class="featuretitle">Professional point of view</div><p>Publish a short reflection on team development, collaboration, or lessons learned from operations and project work.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section white" id="banner">
+<div class="wrap">
+<div class="sectionhead">
+<div class="num">06 / BANNER</div>
+<div>
+<h2>A visual direction built around your strengths</h2>
+<p class="lead">A restrained navy, blue, and warm-gold banner gives the profile a composed, professional feel without implying an unverified personal brand or business offer.</p>
+</div>
+</div>
+<div class="bannerbox">
+<div>
+<div class="kicker">Proposed banner message</div>
+<h3 style="font-size:25px;line-height:1.25">Operations • People • Projects</h3>
+<p>Turning complex work into coordinated execution</p>
+<p class="small">Supporting line: Team leadership | Cross-functional collaboration | Continuous improvement</p>
+<p class="small">The design is intended to complement your operational and people-leadership experience. A profile photo may overlap the left side on LinkedIn, so keep important text to the right.</p>
+<p><a href="Nicole_Stockdale_Mitzner_LinkedIn_Banner.png" download>Open the separate banner image</a></p>
+</div>
+<img src="Nicole_Stockdale_Mitzner_LinkedIn_Banner.png" alt="Proposed LinkedIn banner in navy and blue with warm gold accents, reading Operations, People, Projects and Turning complex work into coordinated execution">
+</div>
+<div class="callout">The current banner image was not included in the supplied materials, so this direction is a fresh proposal rather than a critique of the existing design. Your new banner is attached separately.</div>
+<div class="bar"><h3>Final positioning shift</h3></div>
+<div class="compare">
+<div><div class="tag">Current</div><p><strong>Vendor Manager, at Walmart</strong></p><p class="small">Clear role, limited context about broader strengths.</p></div>
+<div class="after"><div class="tag">New direction</div><p><strong>Vendor management + people leadership + coordinated execution</strong></p><p class="small">A more rounded professional story that still respects the current role.</p></div>
+</div>
+</div>
+</section>
+
+<footer class="footer">Prepared for Nicole Stockdale-Mitzner · LinkedIn Positioning Review</footer>
+<div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard</div>
+
+<script>
+(function(){
+ const toast=document.getElementById('toast');let timer;
+ async function copyText(text,button){
+   try{
+     if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}
+     else{
+       const area=document.createElement('textarea');
+       area.value=text;area.style.position='fixed';area.style.opacity='0';
+       document.body.appendChild(area);area.select();
+       const ok=document.execCommand('copy');area.remove();
+       if(!ok)throw new Error('copy failed')
+     }
+     const old=button.textContent;button.textContent='Copied';
+     toast.classList.add('show');clearTimeout(timer);
+     timer=setTimeout(()=>toast.classList.remove('show'),1700);
+     setTimeout(()=>button.textContent=old,1400);
+   }catch(e){
+     toast.textContent='Copy unavailable. Select and copy the text manually.';
+     toast.classList.add('show');clearTimeout(timer);
+     timer=setTimeout(()=>{toast.classList.remove('show');toast.textContent='Copied to clipboard'},2600)
+   }
+ }
+ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyText(b.getAttribute('data-copy'),b)));
+ document.querySelectorAll('[data-copy-target]').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById(b.getAttribute('data-copy-target'));copyText(el.innerText,b)}));
+ const sections=[...document.querySelectorAll('section[id]')],links=[...document.querySelectorAll('.links a')];
+ if('IntersectionObserver'in window){
+   const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});
+   document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+   const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-25% 0px -65% 0px'});
+   sections.forEach(s=>sectionObserver.observe(s));
+ }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'))}
+})();
+</script>
+</body>
+</html>
